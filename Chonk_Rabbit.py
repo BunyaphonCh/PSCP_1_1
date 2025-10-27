@@ -1,16 +1,18 @@
 '''Bit Kub'''
-num = int(input())
-OVER = 0
-NAME = ''
-MAX = 0
-G = 0
-for i in range(num):
-    name, weight = input().split()
-    if int(weight) > 15:
-        OVER += 1
-    if int(weight) > MAX:
-        NAME = name
-        MAX = int(weight)
-    G += i
-print(OVER)
-print(f'{NAME} {MAX}')
+def main():
+    '''rabbit'''
+    num = int(input())
+    over = 0
+    name_max = 0
+    weight_max = 0
+    for _ in range(num):
+        name, weight = input().split()
+        weight = int(weight)
+        if weight > 15:
+            over += 1
+        if weight > weight_max:
+            weight_max = weight
+            name_max = name
+    print(over)
+    print(f'{name_max} {weight_max}')
+main()
